@@ -12,7 +12,7 @@
     <!-- SIDEBAR NAVIGATION -->
     <aside class="sidebar">
         <div class="profile-container">
-            <img src="SS.jpg" alt="Suprit Singh" class="profile-pic">
+            <img src="SS.webp" alt="Suprit Singh" class="profile-pic">
             <h1 class="name">Suprit Singh</h1>
             <p class="title">Assistant Professor</p>
             <p class="institution">Indian Institute of Technology Delhi</p>
@@ -54,27 +54,27 @@
             <h3>Research Highlights</h3>
             <div class="gallery">
                 <div class="gallery-item">
-                    <img src="IMAGE_A.jpg" alt="Double Edged Oscillator">
+                    <img src="IMAGE_A.webp" alt="Double Edged Oscillator" loading="lazy">
                     <p class="caption">(a) Double Edged Oscillator and Lessons for Gravity</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="IMAGE_B.jpg" alt="Penrose Inequality">
+                    <img src="IMAGE_B.webp" alt="Penrose Inequality" loading="lazy">
                     <p class="caption">(b) Penrose Inequality in AdS Space</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="IMAGE_C.jpg" alt="Schwinger Effect">
+                    <img src="IMAGE_C.webp" alt="Schwinger Effect" loading="lazy">
                     <p class="caption">(c) Schwinger Effect in dS space</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="IMAGE_D.jpg" alt="Matter-Gravity Entanglement">
+                    <img src="IMAGE_D.webp" alt="Matter-Gravity Entanglement" loading="lazy">
                     <p class="caption">(d) Matter-Gravity Entanglement</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="IMAGE_E.jpg" alt="Galactic Magnetic Field">
+                    <img src="IMAGE_E.webp" alt="Galactic Magnetic Field" loading="lazy">
                     <p class="caption">(e) Radial Profile of the Galactic Magnetic Field</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="IMAGE_F.jpg" alt="TSE2024">
+                    <img src="IMAGE_F.webp" alt="TSE2024" loading="lazy">
                     <p class="caption">(f) TSE2024</p>
                 </div>
             </div>
@@ -353,7 +353,7 @@
                     <p class="caption">The equipment used in the experiment for collecting the polarization of the solar corona during the total solar eclipse in 2024. Includes Baader Solar Filters, Refractor Telescopes, Electronic Auto-focuser, Filter Wheel, Cameras, and Flat Panel.</p>
                 </div> -->
                 <div class="gallery-item">
-                    <img src="ASTRO_IMAGES.jpg" alt="Astrophotography Gallery">
+                    <img src="ASTRO_IMAGES.webp" alt="Astrophotography Gallery" loading="lazy">
                     <p class="caption">Optical data of M31 and the nebulae in the Milky Way (M42, Barnard 33, IC 2118, IC 1396, M45, NGC 1499, M8 and the Center of Milky Way, Caldwell 49, and IC 348) and the Sun.</p>
                 </div>
             </div>
@@ -364,7 +364,7 @@
                     <p class="caption">The equipment used in the experiment for collecting the polarization of the solar corona during the total solar eclipse in 2024. Includes Baader Solar Filters, Refractor Telescopes, Electronic Auto-focuser, Filter Wheel, Cameras, and Flat Panel.</p>
                 </div> -->
                 <div class="gallery-item">
-                    <img src="IMAGE_F.jpg" alt="Astrophotography Gallery">
+                    <img src="IMAGE_F.webp" alt="Astrophotography Gallery" loading="lazy">
                     <p class="caption">The Total Solar Eclipse of April 8 2024.</p>
                 </div>
             </div>
@@ -375,6 +375,15 @@
         </footer>
 
     </main>
-
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const pubList = document.querySelector('.pub-list-num');
+        if (pubList) {
+            const itemCount = pubList.children.length;
+            // Set the counter-reset to (itemCount + 1)
+            pubList.style.setProperty('--start-count', (itemCount + 1).toString());
+        }
+    });
+</script>
 </body>
 </html>

@@ -284,15 +284,38 @@ footer {
 }
 
 /* Specifically style the publications list to be numbered */
-.pub-list-num {
+.pub-list-num-old {
     list-style-type: decimal; /* This enables numbering */
     padding-left: 2rem;       /* Adds space for the numbers */
 }
 
 /* Ensure list items look correct */
-.pub-list-num li {
+.pub-list-num-old li {
     margin-bottom: 1rem;
     color: var(--text-secondary);
     line-height: 1.7;
     padding-left: 0.5rem; /* Adds space between number and text */
+}
+
+/* Update your .pub-list rule in style.css */
+.pub-list-num {
+    list-style-type: none;
+    /* Use the variable set by JavaScript, default to 27 if JS fails */
+    counter-reset: section var(--start-count, 27); 
+    padding-left: 2rem;
+}
+
+.pub-list-num li {
+    counter-increment: section -1;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    position: relative;
+}
+
+.pub-list-num li::before {
+    content: counter(section) ". ";
+    font-weight: 600;
+    color: var(--accent);
+    margin-right: 0.5rem;
 }
