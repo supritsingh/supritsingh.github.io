@@ -282,3 +282,17 @@ footer {
         text-align: center;
     }
 }
+
+/* Specifically style the publications list to be numbered */
+.pub-list-num {
+    list-style-type: decimal; /* This enables numbering */
+    padding-left: 2rem;       /* Adds space for the numbers */
+}
+
+/* Ensure list items look correct */
+.pub-list-num li {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    padding-left: 0.5rem; /* Adds space between number and text */
+}
