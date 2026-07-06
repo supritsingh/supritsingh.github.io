@@ -1,0 +1,284 @@
+/* CSS Variables for Institutional Sidebar Theme */
+:root {
+    /* Main Content Colors */
+    --bg-main: #f3f4f6; /* Soft light grey / off-white */
+    --text-primary: #1f2937; /* Dark slate text for high readability */
+    --text-secondary: #4b5563; /* Muted dark text for lists and dates */
+    
+    /* Sidebar Colors */
+    --bg-sidebar: #0f172a; /* Deep midnight blue */
+    --sidebar-text: #f8fafc; /* Pure white for sidebar text */
+    --sidebar-text-muted: #94a3b8; /* Muted slate for sidebar details */
+    
+    /* Accents & Borders */
+    --accent: #1d4ed8; /* Classic institutional royal blue */
+    --accent-hover: #1e3a8a; /* Darker blue for hover states */
+    --card-bg: #ffffff; /* Pure white for content cards */
+    --border-color: #e5e7eb; /* Soft grey for borders and dividers */
+    
+    /* Typography */
+    --font-main: 'Inter', sans-serif;
+    --font-headings: 'Space Grotesk', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: var(--font-headings);
+    font-weight: 600;
+}
+
+/* Main Content Headings */
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent);
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    color: var(--bg-sidebar); /* Matches the midnight blue sidebar */
+}
+
+.content h3 {
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+/* Layout: Sidebar */
+.sidebar {
+    width: 320px;
+    background-color: var(--bg-sidebar);
+    color: var(--sidebar-text);
+    padding: 2.5rem 2rem;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.05);
+}
+
+.sidebar h1, .sidebar h2, .sidebar h3 {
+    color: var(--sidebar-text);
+}
+
+.profile-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff; /* Crisp white border against the blue */
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.name {
+    font-size: 1.6rem;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.5px;
+}
+
+.title, .institution {
+    font-size: 0.95rem;
+    color: var(--sidebar-text-muted);
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.nav-menu a {
+    color: var(--sidebar-text);
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.03); /* Subtle button background */
+    transition: all 0.2s ease;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transform: translateX(4px); /* Slight bump to the right on hover */
+}
+
+.contact-info {
+    font-size: 0.85rem;
+    color: var(--sidebar-text-muted);
+    margin-top: auto;
+    line-height: 1.5;
+    background-color: rgba(0, 0, 0, 0.25); /* Darker inset box for contact */
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.contact-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 0.5rem;
+}
+
+.contact-info a.highlight-link {
+    color: #93c5fd; /* Light blue for links on the dark sidebar */
+}
+
+.contact-info a.highlight-link:hover {
+    color: #bfdbfe;
+}
+
+/* Layout: Main Content */
+.content {
+    margin-left: 320px; /* Offset to clear the fixed sidebar */
+    padding: 4rem 5rem;
+    max-width: 1200px;
+}
+
+.section {
+    margin-bottom: 4rem;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 3rem 0;
+}
+
+/* Components: Cards */
+.card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.timeline {
+    list-style: none;
+}
+
+.timeline li {
+    margin-bottom: 1.2rem;
+    padding-left: 1.2rem;
+    border-left: 3px solid var(--accent);
+    color: var(--text-primary);
+}
+
+.pub-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.pub-list li {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Components: Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.gallery-item {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+}
+
+.caption {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive Design for smaller screens */
+@media screen and (max-width: 960px) {
+    body {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 2rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    .content {
+        margin-left: 0;
+        padding: 2rem;
+    }
+    
+    .nav-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .nav-menu a {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+}
